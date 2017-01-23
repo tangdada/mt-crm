@@ -5,21 +5,15 @@ const exec = require('child_process').execSync
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ProgressPlugin = require('webpack/lib/ProgressPlugin')
-const OfflinePlugin = require('offline-plugin')
 const base = require('./webpack.base')
 const pkg = require('../package')
 const _ = require('./webpack.utils')
 const config = require('./config')
 
-if (config.electron) {
-  // remove dist folder in electron mode
-  exec('rm -rf app/assets/')
-} else {
-  // remove dist folder in web app mode
-  exec('rm -rf dist/')
-  // use source-map in web app mode
-  base.devtool = 'source-map'
-}
+// remove dist folder in web app mode
+exec('rm -rf dist/')
+// use source-map in web app mode
+base.devtool = 'source-map'
 
 // a white list to add dependencies to vendor chunk
 base.entry.vendor = config.vendor
@@ -45,15 +39,6 @@ base.plugins.push(
   new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
     filename: 'vendor.[chunkhash:8].js'
-  }),
-  // progressive web app
-  // it uses the publicPath in webpack config
-  new OfflinePlugin({
-    relativePaths: false,
-    AppCache: false,
-    ServiceWorker: {
-      events: true
-    }
   })
 )
 
