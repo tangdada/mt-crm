@@ -2,7 +2,8 @@
   <div class="page">
     <counter></counter>
     <p>
-      To get started, edit files in <code>./src</code> and save.
+      some features: <br />
+      <router-link to="/transition">Go to transition</router-link>
     </p>
   </div>
 </template>
