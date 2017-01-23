@@ -10,9 +10,9 @@ const config = require('./config')
 const app = express()
 
 const port = config.port
-webpackConfig.entry.client = [
+webpackConfig.entry.app = [
   `webpack-hot-middleware/client?reload=true`,
-  webpackConfig.entry.client
+  webpackConfig.entry.app
 ]
 
 let compiler

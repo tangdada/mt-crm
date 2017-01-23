@@ -8,7 +8,7 @@ const _ = require('./webpack.utils')
 
 module.exports = {
   entry: {
-    client: './client/app.js'
+    app: './src/app.js'
   },
   output: {
     path: path.join(__dirname, '../dist'),
@@ -21,14 +21,14 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.css', '.json'],
     alias: {
-      root: path.join(__dirname, '../client'),
-      components: path.join(__dirname, '../client/components')
+      root: path.join(__dirname, '../src'),
+      components: path.join(__dirname, '../src/components')
     },
     modules: [
       _.cwd('node_modules'),
       // this meanse you can get rid of dot hell
       // for example import 'components/Foo' instead of import '../../components/Foo'
-      _.cwd('client')
+      _.cwd('src')
     ]
   },
   module: {
@@ -62,7 +62,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: config.title,
-      template: path.resolve(__dirname, '../client/index.html'),
+      template: path.resolve(__dirname, '../src/index.html'),
       filename: path.resolve(__dirname, '../dist/index.html'),
     }),
     new webpack.LoaderOptionsPlugin(_.loadersOptions()),
