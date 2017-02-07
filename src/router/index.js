@@ -1,25 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../views/Home'
-import Login from '../views/Login'
-import Transition from '../views/demoView/transition/Transition'
+
+const m_public =  require('./m_public')  //公用模块
+const m_1 =  require('./m_1')  //${m_1}模块
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'hash',
-  routes: [
-    {
-      path: '/',
-      component: Login
-    },
-    {
-      path: '/home',
-      component: Home
-    },
-    {
-      path: '/transition',
-      component: Transition
-    }
-  ]
+  routes: m_public.concat(m_1)
 })

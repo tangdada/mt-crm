@@ -8,6 +8,8 @@ import router from './router'
 import store from './store'
 sync(store, router)
 
+import './api'
+
 const app = new Vue({
   router,
   store,
