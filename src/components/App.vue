@@ -1,8 +1,30 @@
 <template>
   <div id="app">
+    <Loading></Loading>
     <router-view></router-view>
   </div>
 </template>
+
+<script>
+import Loading from './Loading'
+
+export default {
+  components: {
+    Loading
+  },
+
+  computed: {
+  },
+
+  methods: {
+    handleSelect(key, keyPath) {
+      if (key != 3) {
+        this.$router.push(key)
+      }
+    }
+  }
+}
+</script>
 
 <style>
 body {

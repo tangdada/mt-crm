@@ -38,7 +38,7 @@ export default {
         rememberMeFive:false
       }
       this.$http.post('/login', param).then((response) => {
-        this.$router.push({path: '/main'});
+        this.$router.push({path: '/main/hospitalmanage'});
       }, (res) => {
         this.errorMsg = res.text;
       });

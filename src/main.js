@@ -9,6 +9,7 @@ import store from './store'
 sync(store, router)
 
 import './api'
+import './filters'
 
 const app = new Vue({
   router,

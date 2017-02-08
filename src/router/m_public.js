@@ -1,6 +1,6 @@
 import Home from '../views/m_public/home/Home'
 import Login from '../views/m_public/login/Login'
-import Transition from '../views/demoView/transition/Transition'
+import Transition from '../views/m_public/demoView/transition/Transition'
 
 module.exports = [
   {
