@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <Loading></Loading>
     <router-view></router-view>
   </div>
 </template>
@@ -17,11 +16,6 @@ export default {
   },
 
   methods: {
-    handleSelect(key, keyPath) {
-      if (key != 3) {
-        this.$router.push(key)
-      }
-    }
   }
 }
 </script>
