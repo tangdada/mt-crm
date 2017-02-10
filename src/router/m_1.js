@@ -1,7 +1,7 @@
 import Main from '../views/m_1/Index'
 import HospitalManage from '../views/m_1/hospitalmanage/HospitalManage'
 
-module.exports = [{
+export default [{
   path: '/main',
   component: Main,
   // 定义子路由
