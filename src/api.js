@@ -3,7 +3,7 @@ import vueResource from 'vue-resource'
 
 Vue.use(vueResource);
 
-let apiBasePath = 'http://localhost:9000/manage-site';  //后端地址
+let apiBasePath = 'http://qatest1.mytijian.cn/manage';  //后端地址
 
 Vue.http.options.emulateJSON = true;
 Vue.http.options.credentials = true;  //跨域带cookie

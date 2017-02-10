@@ -1,12 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const m_public =  require('./m_public')  //公用模块
-const m_1 =  require('./m_1')  //${m_1}模块
+import * as m_1 from './m_1'
+import * as m_public from './m_public'
 
 Vue.use(Router)
 
+console.log(m_1)
+console.log(m_public)
+
 export default new Router({
   mode: 'hash',
-  routes: m_public.concat(m_1)
+  routes: [
+    ...m_1.default, ...m_public.default
+  ]
 })
