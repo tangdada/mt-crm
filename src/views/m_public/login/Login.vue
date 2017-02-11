@@ -2,10 +2,12 @@
 <div class="loginbg">
   <div class="login-box">
     <div class="login-form">
-      <Alert :title="errorMsg" v-show="loginError"></Alert>
-      <el-input v-model="username" placeholder="用户名"></el-input>
-      <el-input type="password" v-model="pwd" placeholder="密码"></el-input>
-      <div class="login-btn"><el-button type="primary" size="large" @click="login">登陆</el-button></div>
+      <form>
+        <Alert :title="errorMsg" v-show="loginError"></Alert>
+        <el-input v-model="username" placeholder="用户名"></el-input>
+        <el-input type="password" v-model="pwd" placeholder="密码"></el-input>
+        <div class="login-btn"><button class="el-button el-button--primary el-button--large" type="submit" @click="login">登陆</button></div>
+      </form>
     </div>
   </div>
 </div>
@@ -16,7 +18,6 @@ import {
   Input,
   Button,
   Alert
-  // ...
 } from 'element-ui'
 
 export default {

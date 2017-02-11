@@ -8,7 +8,7 @@
   </el-table>
 
   <!-- dialog start -->
-  <el-dialog title="收货地址" v-model="dialogFormVisible" size="tiny" :show-close=false>
+  <el-dialog :title="form.name" v-model="dialogFormVisible" size="tiny" :show-close=false>
     <el-form :model="form">
       <el-form-item label="活动名称" :label-width="formLabelWidth">
         <el-input v-model="form.name" auto-complete="off"></el-input>
@@ -20,6 +20,7 @@
         </el-select>
       </el-form-item>
     </el-form>
+    <el-button @click="testChange()">change</el-button>
     <div slot="footer" class="dialog-footer">
       <el-button @click="dialogFormVisible = false">取 消</el-button>
       <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
@@ -62,7 +63,7 @@ export default {
 
       dialogFormVisible: false,
       form: {
-        name: '',
+        name: '唐大清',
         region: '',
         date1: '',
         date2: '',
@@ -86,6 +87,10 @@ export default {
   methods: {
     showDialog() {
       this.dialogFormVisible = true;
+    },
+
+    testChange() {
+      this.form.name = this.form.name == '清大唐' ? '唐大清' : '清大唐';
     }
   },
 
